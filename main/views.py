@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect  # Import redirect
+from django.shortcuts import render
 from .forms import SearchForm
 from faker import Faker
 fake = Faker()
