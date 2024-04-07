@@ -5,6 +5,7 @@ from . import views
 app_name = 'main'
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    # URL pattern for rendering the search form
+    path('', views.search, name='search'),
 
 ]
