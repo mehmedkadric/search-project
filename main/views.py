@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from .forms import SearchForm
 from faker import Faker
-from time import sleep
 import threading
-from .models import Search
 
 fake = Faker()
 
@@ -22,8 +20,6 @@ def search(request):
         dummy_data = fake.text()
         query = form.cleaned_data['query']
         context['dummy_data'] = f"{query} {dummy_data}"
-
+        
     context['form'] = form
-
-    context['forms_no'] = Search.objects.all()
     return render(request, 'search.html', context=context)
