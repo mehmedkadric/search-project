@@ -3,3 +3,5 @@ Django==5.0.4
 python-dotenv==1.0.1
 sqlparse==0.4.4
 faker
+pandas
+openpyxl
