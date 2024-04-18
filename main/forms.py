@@ -11,7 +11,7 @@ class SearchForm(forms.ModelForm):
 
 
 class UploadDataForm(forms.ModelForm):
-    data_file = forms.FileField(widget=forms.ClearableFileInput(attrs={'class': 'form-control-file', 'accept': '.xls,.xlsx,.csv'}))
+    data_file = forms.FileField(widget=forms.ClearableFileInput(attrs={'accept': '.xls,.xlsx,.csv'}))
 
     class Meta:
         model = Data
