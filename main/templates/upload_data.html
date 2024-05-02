@@ -1,0 +1,52 @@
+<head>
+    <title> Upload Data </title>
+</head>
+{% include 'includes/navbar.html' %}
+
+
+<div class="container">
+    {% include "includes/messages.html" %}
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12">
+            <h1 class="text-center">
+                <a href="{% url 'main:upload_data' %}" style="color: inherit; text-decoration: none;">
+                    Upload Data
+                </a>
+            </h1>
+        </div>
+    </div>
+<script>
+    
+</script>
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form method="POST" action="{% url 'main:upload_data' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    {{ form.data_file }}
+                </div>
+                <div class="text-end">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Upload</button>
+                </div>
+            </form>            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            {% if form.errors %}
+            <ul>
+                {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                <li>{{ field }}: {{ error }}</li>
+                {% endfor %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
